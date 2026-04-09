@@ -3,365 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Joshua Sarnelli | Portfolio</title>
-    <meta name="description" content="Portfolio personale di Joshua Sarnelli: sviluppo web, design e progetti digitali.">
-    <style>
-        :root {
-            --bg: #0b0f1a;
-            --panel: #141b2d;
-            --text: #e8ecf5;
-            --muted: #9aa6c3;
-            --accent: #4f8cff;
-            --accent-2: #7b61ff;
-            --border: rgba(255, 255, 255, 0.08);
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: "Segoe UI", Inter, Roboto, Arial, sans-serif;
-            background: radial-gradient(circle at 15% -10%, #1f2b53 0%, var(--bg) 46%);
-            color: var(--text);
-            line-height: 1.6;
-        }
-
-        .container {
-            width: min(1100px, 92%);
-            margin: 0 auto;
-        }
-
-        .navbar {
-            position: sticky;
-            top: 0;
-            z-index: 10;
-            backdrop-filter: blur(10px);
-            background: rgba(11, 15, 26, 0.78);
-            border-bottom: 1px solid var(--border);
-        }
-
-        .navbar .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 16px 0;
-        }
-
-        .logo {
-            font-size: 1.1rem;
-            font-weight: 700;
-            letter-spacing: 0.2px;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 20px;
-            list-style: none;
-        }
-
-        .nav-links a {
-            color: var(--muted);
-            text-decoration: none;
-            font-size: 0.95rem;
-            transition: color 0.2s ease;
-        }
-
-        .nav-links a:hover {
-            color: var(--text);
-        }
-
-        .hero {
-            padding: 100px 0 70px;
-        }
-
-        .hero-grid {
-            display: grid;
-            grid-template-columns: 1.2fr 0.8fr;
-            gap: 40px;
-            align-items: center;
-        }
-
-        .badge {
-            display: inline-block;
-            font-size: 0.84rem;
-            color: #c9d4f2;
-            background: rgba(79, 140, 255, 0.15);
-            border: 1px solid rgba(79, 140, 255, 0.4);
-            border-radius: 999px;
-            padding: 6px 12px;
-            margin-bottom: 16px;
-        }
-
-        h1 {
-            font-size: clamp(2rem, 4vw, 3.35rem);
-            line-height: 1.1;
-            margin-bottom: 16px;
-        }
-
-        .hero p {
-            color: var(--muted);
-            max-width: 60ch;
-            margin-bottom: 28px;
-        }
-
-        .cta {
-            display: flex;
-            gap: 12px;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            display: inline-block;
-            text-decoration: none;
-            font-weight: 600;
-            padding: 11px 18px;
-            border-radius: 10px;
-            transition: transform 0.2s ease, opacity 0.2s ease;
-        }
-
-        .btn:hover {
-            transform: translateY(-2px);
-            opacity: 0.95;
-        }
-
-        .btn-primary {
-            color: white;
-            background: linear-gradient(90deg, var(--accent), var(--accent-2));
-        }
-
-        .btn-outline {
-            color: var(--text);
-            border: 1px solid var(--border);
-            background: transparent;
-        }
-
-        .hero-card {
-            background: linear-gradient(180deg, #1a2340 0%, #12192c 100%);
-            border: 1px solid var(--border);
-            border-radius: 16px;
-            padding: 22px;
-            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
-        }
-
-        .hero-card h3 {
-            font-size: 1.1rem;
-            margin-bottom: 12px;
-        }
-
-        .hero-card ul {
-            list-style: none;
-            display: grid;
-            gap: 8px;
-        }
-
-        .hero-card li {
-            color: #d8e1ff;
-            font-size: 0.95rem;
-            padding: 10px 12px;
-            border-radius: 10px;
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.06);
-        }
-
-        section {
-            padding: 75px 0;
-        }
-
-        .section-title {
-            font-size: 1.8rem;
-            margin-bottom: 10px;
-        }
-
-        .section-subtitle {
-            color: var(--muted);
-            margin-bottom: 28px;
-        }
-
-        .about-box {
-            background: var(--panel);
-            border: 1px solid var(--border);
-            border-radius: 14px;
-            padding: 24px;
-        }
-
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(3, minmax(0, 1fr));
-            gap: 16px;
-        }
-
-        .project {
-            background: var(--panel);
-            border: 1px solid var(--border);
-            border-radius: 14px;
-            padding: 18px;
-            transition: transform 0.2s ease, border-color 0.2s ease;
-        }
-
-        .project:hover {
-            transform: translateY(-3px);
-            border-color: rgba(123, 97, 255, 0.55);
-        }
-
-        .project h3 {
-            margin-bottom: 8px;
-            font-size: 1.05rem;
-        }
-
-        .project p {
-            color: var(--muted);
-            font-size: 0.95rem;
-            margin-bottom: 12px;
-        }
-
-        .project a {
-            color: #b9c7ff;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.92rem;
-        }
-
-        .contact {
-            text-align: center;
-            background: linear-gradient(180deg, rgba(79, 140, 255, 0.08), rgba(123, 97, 255, 0.08));
-            border-top: 1px solid var(--border);
-            border-bottom: 1px solid var(--border);
-        }
-
-        .contact p {
-            color: var(--muted);
-            margin: 10px 0 24px;
-        }
-
-        footer {
-            color: #90a0c3;
-            text-align: center;
-            padding: 24px 0 30px;
-            font-size: 0.9rem;
-        }
-
-        @media (max-width: 900px) {
-            .hero-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .projects-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-        }
-
-        @media (max-width: 620px) {
-            .nav-links {
-                display: none;
-            }
-
-            .projects-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .hero {
-                padding-top: 70px;
-            }
-        }
-    </style>
+    <title>Portfolio Studente Informatico | Home</title>
+    <meta name="description" content="Portfolio di uno studente informatico: sviluppo web, algoritmi, progetti e competenze tecniche.">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header class="navbar">
-        <div class="container">
-            <div class="logo">Joshua Sarnelli</div>
-            <ul class="nav-links">
-                <li><a href="#about">Chi sono</a></li>
-                <li><a href="#projects">Progetti</a></li>
-                <li><a href="#contact">Contatti</a></li>
-            </ul>
+        <div class="container nav-content">
+            <a class="logo" href="index.html">DevPortfolio</a>
+            <button id="theme-toggle" class="theme-toggle" aria-label="Cambia tema">Tema</button>
+            <button id="menu-toggle" class="menu-toggle" aria-label="Apri menu">Menu</button>
+            <nav>
+                <ul id="nav-list" class="nav-links">
+                    <li><a class="active" href="index.html">Home</a></li>
+                    <li><a href="about.html">Chi sono</a></li>
+                    <li><a href="projects.html">Progetti</a></li>
+                    <li><a href="contact.html">Contatti</a></li>
+                </ul>
+            </nav>
         </div>
     </header>
 
-    <main>
-        <section class="hero">
-            <div class="container hero-grid">
-                <div>
-                    <span class="badge">Portfolio personale</span>
-                    <h1>Progetto esperienze digitali semplici, veloci e memorabili.</h1>
-                    <p>
-                        Ciao, sono Joshua Sarnelli. Aiuto brand e professionisti a trasformare idee in siti moderni,
-                        con attenzione a design, performance e user experience.
-                    </p>
-                    <div class="cta">
-                        <a class="btn btn-primary" href="#projects">Vedi i progetti</a>
-                        <a class="btn btn-outline" href="#contact">Contattami</a>
-                    </div>
-                </div>
-                <aside class="hero-card">
-                    <h3>Cosa faccio</h3>
-                    <ul>
-                        <li>Web design e sviluppo frontend</li>
-                        <li>Landing page orientate alla conversione</li>
-                        <li>Ottimizzazione SEO e performance</li>
-                        <li>Brand identity digitale</li>
-                    </ul>
-                </aside>
+    <main class="container page">
+        <section class="hero reveal">
+            <p class="eyebrow">Studente di Informatica</p>
+            <h1 id="typing-title" data-text="Ciao, sono Joshua Sarnelli."></h1>
+            <p class="lead">
+                Studio informatica e sviluppo applicazioni web moderne. Mi appassionano frontend,
+                backend e problem solving: trasformo idee in progetti funzionanti e ben strutturati.
+            </p>
+            <div class="cta">
+                <a class="btn btn-primary" href="projects.html">Vedi i miei progetti</a>
+                <a class="btn btn-secondary" href="contact.html">Contattami</a>
             </div>
         </section>
 
-        <section id="about">
-            <div class="container">
-                <h2 class="section-title">Chi sono</h2>
-                <p class="section-subtitle">Una breve panoramica del mio lavoro.</p>
-                <div class="about-box">
-                    <p>
-                        Sono un creativo digitale con focus su sviluppo web e design strategico.
-                        Lavoro su progetti curati nei dettagli, dal concept iniziale al lancio,
-                        per costruire esperienze che uniscono estetica e risultati concreti.
-                    </p>
-                </div>
-            </div>
+        <section class="cards-grid reveal">
+            <article class="card floating-card">
+                <h2>Focus Tecnico</h2>
+                <p>HTML, CSS, JavaScript, basi di Python e SQL, Git/GitHub e principi di clean code.</p>
+            </article>
+            <article class="card floating-card">
+                <h2>Obiettivo</h2>
+                <p>Crescere come full-stack developer, costruendo progetti utili e migliorando ogni giorno.</p>
+            </article>
+            <article class="card floating-card">
+                <h2>Metodo</h2>
+                <p>Studio costante, pratica su progetti reali e attenzione alla qualita del codice.</p>
+            </article>
         </section>
 
-        <section id="projects">
-            <div class="container">
-                <h2 class="section-title">Progetti in evidenza</h2>
-                <p class="section-subtitle">Selezione di lavori recenti.</p>
-                <div class="projects-grid">
-                    <article class="project">
-                        <h3>Brand Studio Website</h3>
-                        <p>Sito vetrina premium per studio creativo, con focus su storytelling visivo.</p>
-                        <a href="#">Scopri il progetto</a>
-                    </article>
-                    <article class="project">
-                        <h3>E-commerce Minimal</h3>
-                        <p>Esperienza di acquisto essenziale e veloce per un brand fashion indipendente.</p>
-                        <a href="#">Scopri il progetto</a>
-                    </article>
-                    <article class="project">
-                        <h3>Landing Eventi Live</h3>
-                        <p>Pagina promozionale per eventi, pensata per massimizzare iscrizioni e lead.</p>
-                        <a href="#">Scopri il progetto</a>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <section class="contact" id="contact">
-            <div class="container">
-                <h2 class="section-title">Parliamo del tuo progetto</h2>
-                <p>Scrivimi per collaborazioni, freelance o nuove idee digitali.</p>
-                <a class="btn btn-primary" href="mailto:joshua@email.com">joshua@email.com</a>
-            </div>
+        <section class="stats-grid reveal">
+            <article class="stat-card">
+                <h2><span class="counter" data-target="18">0</span>+</h2>
+                <p>Progetti completati</p>
+            </article>
+            <article class="stat-card">
+                <h2><span class="counter" data-target="9">0</span></h2>
+                <p>Tecnologie studiate</p>
+            </article>
+            <article class="stat-card">
+                <h2><span class="counter" data-target="420">0</span>h</h2>
+                <p>Ore di pratica coding</p>
+            </article>
+            <article class="stat-card">
+                <h2><span class="counter" data-target="100">0</span>%</h2>
+                <p>Dedizione alla crescita</p>
+            </article>
         </section>
     </main>
 
-    <footer>
+    <footer class="footer">
         <div class="container">
-            <p>&copy; 2026 Joshua Sarnelli - Portfolio personale</p>
+            <p>&copy; <span id="year"></span> Joshua Sarnelli - Portfolio Studente Informatico</p>
         </div>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>

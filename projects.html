@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Studente Informatico | Progetti</title>
+    <meta name="description" content="Progetti di uno studente informatico: web app, dashboard dati, strumenti utili per lo studio.">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="container nav-content">
+            <a class="logo" href="index.html">DevPortfolio</a>
+            <button id="theme-toggle" class="theme-toggle" aria-label="Cambia tema">Tema</button>
+            <button id="menu-toggle" class="menu-toggle" aria-label="Apri menu">Menu</button>
+            <nav>
+                <ul id="nav-list" class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">Chi sono</a></li>
+                    <li><a class="active" href="projects.html">Progetti</a></li>
+                    <li><a href="contact.html">Contatti</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container page">
+        <section class="section reveal">
+            <h1>Progetti</h1>
+            <p class="lead">Alcuni lavori pensati per dimostrare competenze pratiche e crescita tecnica.</p>
+            <div class="filter-group" role="group" aria-label="Filtra progetti">
+                <button class="filter-btn active" data-filter="all">Tutti</button>
+                <button class="filter-btn" data-filter="web">Web</button>
+                <button class="filter-btn" data-filter="data">Dati</button>
+                <button class="filter-btn" data-filter="ux">UX/UI</button>
+            </div>
+        </section>
+
+        <section class="cards-grid reveal" id="projects-grid">
+            <article class="card project-card" data-category="web ux">
+                <h2>Task Manager Web</h2>
+                <p>Applicazione per gestire attivita giornaliere con stato, filtri e persistenza locale.</p>
+                <p class="tags">Tech: HTML, CSS, JavaScript</p>
+                <a class="mini-link" href="#">Demo</a>
+            </article>
+            <article class="card project-card" data-category="data ux">
+                <h2>Dashboard Voti</h2>
+                <p>Interfaccia per monitorare andamento scolastico con media, trend e grafici base.</p>
+                <p class="tags">Tech: JavaScript, Chart logic, UX</p>
+                <a class="mini-link" href="#">Demo</a>
+            </article>
+            <article class="card project-card" data-category="web">
+                <h2>Sito Portfolio Responsive</h2>
+                <p>Portfolio personale multipagina ottimizzato per desktop e smartphone.</p>
+                <p class="tags">Tech: HTML, CSS, JavaScript, Git</p>
+                <a class="mini-link" href="#">Demo</a>
+            </article>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; <span id="year"></span> Joshua Sarnelli - Portfolio Studente Informatico</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

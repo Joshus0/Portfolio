@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Studente Informatico | Chi sono</title>
+    <meta name="description" content="Chi sono: studente di informatica con passione per sviluppo web, algoritmi e progetti pratici.">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="container nav-content">
+            <a class="logo" href="index.html">DevPortfolio</a>
+            <button id="theme-toggle" class="theme-toggle" aria-label="Cambia tema">Tema</button>
+            <button id="menu-toggle" class="menu-toggle" aria-label="Apri menu">Menu</button>
+            <nav>
+                <ul id="nav-list" class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a class="active" href="about.html">Chi sono</a></li>
+                    <li><a href="projects.html">Progetti</a></li>
+                    <li><a href="contact.html">Contatti</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container page">
+        <section class="section reveal">
+            <h1>Chi sono</h1>
+            <p class="lead">
+                Sono Joshua Sarnelli, studente di informatica. Mi piace imparare costruendo: ogni
+                progetto e una occasione per migliorare logica, architettura e qualita del codice.
+            </p>
+        </section>
+
+        <section class="cards-grid reveal">
+            <article class="card floating-card">
+                <h2>Formazione</h2>
+                <p>Studio programmazione, basi di sistemi, database e sviluppo web moderno.</p>
+            </article>
+            <article class="card floating-card">
+                <h2>Soft Skill</h2>
+                <p>Collaborazione, organizzazione del lavoro e comunicazione chiara durante i progetti.</p>
+            </article>
+            <article class="card floating-card">
+                <h2>Interessi</h2>
+                <p>Web app, automazione, UX/UI e strumenti che aiutano studenti e creator digitali.</p>
+            </article>
+        </section>
+
+        <section class="section reveal">
+            <h2>Percorso</h2>
+            <div class="timeline">
+                <article class="timeline-item">
+                    <h3>2024 - Fondamenti</h3>
+                    <p>Prime basi solide su HTML, CSS, logica di programmazione e Git.</p>
+                </article>
+                <article class="timeline-item">
+                    <h3>2025 - JavaScript e progetti</h3>
+                    <p>Sviluppo di app interattive e portfolio multipagina responsive.</p>
+                </article>
+                <article class="timeline-item">
+                    <h3>2026 - Focus full stack</h3>
+                    <p>Approfondimento backend, database e workflow professionale.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="section reveal">
+            <h2>Competenze</h2>
+            <div class="skills-list">
+                <div class="skill">
+                    <div class="skill-head"><span>HTML/CSS</span><span>90%</span></div>
+                    <div class="skill-bar"><span class="skill-progress" data-level="90"></span></div>
+                </div>
+                <div class="skill">
+                    <div class="skill-head"><span>JavaScript</span><span>80%</span></div>
+                    <div class="skill-bar"><span class="skill-progress" data-level="80"></span></div>
+                </div>
+                <div class="skill">
+                    <div class="skill-head"><span>Python</span><span>65%</span></div>
+                    <div class="skill-bar"><span class="skill-progress" data-level="65"></span></div>
+                </div>
+                <div class="skill">
+                    <div class="skill-head"><span>SQL</span><span>60%</span></div>
+                    <div class="skill-bar"><span class="skill-progress" data-level="60"></span></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; <span id="year"></span> Joshua Sarnelli - Portfolio Studente Informatico</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
